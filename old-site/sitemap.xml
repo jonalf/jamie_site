@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>http://www.jamiethiessen.com/</loc>
+
+      <lastmod>2012-01-31</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+   </url>
+   
+   <url>
+     <loc>http://www.jamiethiessen.com/media.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/resume.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/contact.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/photos.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/gal2.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/photos.html/gal3.html</loc>
+   </url>
+
+   <url>
+     <loc>http://www.jamiethiessen.com/photos.html/gal4.html</loc>
+   </url>
+
+
+
+</urlset> 
