@@ -1,3 +1,15 @@
+/* color scheme
+blue:    #98C1D9
+purple:  #6969B3
+pink:    #FFA69E
+yellow:  #FAF3DD
+gray:    #5E6472
+*/
+
+h1 {
+    color: #6969B3;
+}
+
 body {
     background-color: #FAF3DD;
     color: #5E6472;
@@ -10,4 +22,76 @@ body {
 .page-header {
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
     font-style: italic;
+    border-bottom: 1px solid #6969B3;
+}
+
+/*==========================
+  NAVBAR STYLES
+==========================*/
+.navbar {
+    background-color: #6969B3;
+}
+
+/*navbar link stuff*/
+.navbar-brand>a {
+    color: #98C1D9;
+}
+
+.navbar-brand>a:hover {
+    color: #FAF3DD;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #98C1D9;
+    font-size: 1.25em;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #FAF3DD;
+}
+
+/*toggle icon*/
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FAF3DD;    
+}
+
+/*dropdown menu header*/
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+										    background-color: #7B7BD1;
+										    color: #FAF3DD;
+										}
+
+/* dropdown menu mods */
+.dropdown-menu {
+    background-color: #6969B3;
+}
+
+.dropdown-menu>li>a {
+    color: #98C1D9;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+    background-color: #FAF3DD;
+    color: #6969B3;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #98C1D9;
+    font-size: 1.1em;
+}
+/*==========================
+  END NAVBAR SECTION
+==========================*/
+
+.jumbotron {
+    background-color: #FFA69E;
+}
+
+hr {
+    border-color: #5E6472;
+}
+
+a {
+    color: #6969B3;
 }
