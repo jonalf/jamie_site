@@ -1,18 +1,24 @@
 /* color scheme
 blue:    #98C1D9
 purple:  #6969B3
+new-purple: #6363A8
 pink:    #FFA69E
 yellow:  #FAF3DD
 gray:    #5E6472
 */
 
 h1 {
-    color: #6969B3;
+    color: #6363A8;
+    font-size: 550%;
 }
 
 body {
-    background-color: #FAF3DD;
+    background-color: #F1AB86;
     color: #5E6472;
+}
+
+.jumbotron {
+    background-color: #F1AB86;
 }
 
 .container {
@@ -25,12 +31,46 @@ body {
     border-bottom: 1px solid #6969B3;
 }
 
+.gallery {
+    margin-bottom: 20px;
+ }
+
+.boxed {
+    border: 2px solid;
+}
+
+/*
+ul .gallery {
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+}
+*/
+
 /*==========================
   NAVBAR STYLES
 ==========================*/
 .navbar {
-    background-color: #6969B3;
+    background-color: #6363A8;
+    border: 0px;
 }
+
+/*
+this makes the navbar links centered
+but puts them all on one line when the
+toggle is used for sall screens 
+
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.navbar .nav>li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+*/
 
 /*navbar link stuff*/
 .navbar-brand>a {
@@ -84,9 +124,7 @@ body {
   END NAVBAR SECTION
 ==========================*/
 
-.jumbotron {
-    background-color: #FFA69E;
-}
+
 
 hr {
     border-color: #5E6472;
