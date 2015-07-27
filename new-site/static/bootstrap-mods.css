@@ -19,6 +19,7 @@ body {
 
 .jumbotron {
     background-color: #F1AB86;
+    padding-top: 5px;
 }
 
 .container {
@@ -46,12 +47,19 @@ ul .gallery {
 }
 */
 
+.page-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+
 /*==========================
   NAVBAR STYLES
 ==========================*/
 .navbar {
     background-color: #6363A8;
     border: 0px;
+    margin-bottom: 0px;
 }
 
 /*
