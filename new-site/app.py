@@ -13,23 +13,23 @@ GALLERY_LOCATION = 'static/img/galleries'
 def root():
     return render_template( 'main.html' )
 
-@site.route( '/bio' )
+@site.route( '/bio.html' )
 def bio():
     return render_template( 'bio.html' )
 
-@site.route( '/resume' )
+@site.route( '/resume.html' )
 def resume():
     return render_template( 'resume.html' )
 
-@site.route( '/audio' )
+@site.route( '/audio.html' )
 def audio():
     return render_template( 'main.html' )
 
-@site.route( '/video' )
+@site.route( '/video.html' )
 def video():
     return render_template( 'main.html' )
 
-@site.route( '/photos' )
+@site.route( '/photos.html' )
 def photos():
     location = [GALLERY_LOCATION]
     all_pics = []
@@ -45,10 +45,10 @@ def photos():
             location.pop()
         all_pics.append( pics )
         location.pop()
-    print all_pics
+    #print all_pics
     return render_template( 'photos.html', all_pics = all_pics )
 
-@site.route( '/contact' )
+@site.route( '/contact.html' )
 def contact():
     return render_template( 'main.html' )
 

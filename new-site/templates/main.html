@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block image %}
-<img class="img-responsive" src="/static/img/headshot2.jpg">
+<img class="img-responsive" src="{{ url_for( 'static', filename='img/headshot2.jpg') }}">
 {% endblock %}
 
 {% block side_text %}

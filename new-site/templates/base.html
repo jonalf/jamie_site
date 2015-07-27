@@ -4,10 +4,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="/static/jquery-1.11.3.min.js"></script>
-  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-  <link href="/static/bootstrap-mods.css" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='jquery-1.11.3.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+  <link href="{{ url_for( 'static', filename='bootstrap-mods.css') }}" rel="stylesheet" />
   <title>Jamie Thiessen</title>
 </head>
 
@@ -28,19 +28,19 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	  <ul class="nav navbar-nav">
-	    <li><a href="/">home</a></li>
-	    <li><a href="/bio">bio</a></li>
-	    <li><a href="/resume">resume</a></li>
-	    <li><a href="/contact">contact</a></li>
-	    <li><a href="/photos">photos</a></li>
-	    <li><a href="/video">video</a></li>
-	    <li><a href="/audio">audio</a></li>
+	    <li><a href="{{ url_for('root') }}">home</a></li>
+	    <li><a href="{{ url_for( 'bio' ) }}">bio</a></li>
+	    <li><a href="{{ url_for( 'resume' ) }}">resume</a></li>
+	    <li><a href="{{ url_for( 'contact' ) }}">contact</a></li>
+	    <li><a href="{{ url_for( 'photos' ) }}">photos</a></li>
+	    <li><a href="{{ url_for( 'video' ) }}">video</a></li>
+	    <li><a href="{{ url_for( 'audio' ) }}">audio</a></li>
 	    <!--
 	    <li class="dropdown">
 	      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">media<span class="caret"></span></a>
 	      <ul class="dropdown-menu">
-		<li><a href="/video">video</a></li>
-		<li><a href="/audio">audio</a></li>
+		<li><a href="/video.html">video</a></li>
+		<li><a href="/audio.html">audio</a></li>
 	      </ul>
 	    </li>
 	    -->
