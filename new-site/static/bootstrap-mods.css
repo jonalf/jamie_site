@@ -62,6 +62,14 @@ ul .gallery {
     margin-bottom: 0px;
 }
 
+.navbar-default .navbar-brand {
+    color: #98C1D9;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #98C1D9;
+}
+
 /*
 this makes the navbar links centered
 but puts them all on one line when the
