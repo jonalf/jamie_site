@@ -8,6 +8,7 @@ site = Flask( __name__ )
 #freezer = Freezer( site )
 
 GALLERY_LOCATION = 'static/img/galleries'
+GALLERIES = { 'Cabaret':'cabaret', 'Carousel':'carousel', 'The Marvelous Wonderettes':'marvelous' }
 
 @site.route( '/' )
 def root():
@@ -29,7 +30,19 @@ def audio():
 def video():
     return render_template( 'main.html' )
 
+@site.route( '/photos/<GAL_NAME>' )
 @site.route( '/photos.html' )
+def photos(GAL_NAME = None):
+
+    if not GAL_NAME:
+        gs = {}
+        for gallery in GALLERIES:
+            gs[ gallery ] = GALLERY_LOCATION + '/' + GALLERIES[gallery] + '/thumbs/1.jpg'
+        return render_template( "photos.html", galleries = gs)
+    else:
+        return render_template( "main.html" )
+    
+"""
 def photos():
     location = [GALLERY_LOCATION]
     all_pics = []
@@ -47,6 +60,7 @@ def photos():
         location.pop()
     #print all_pics
     return render_template( 'photos.html', all_pics = all_pics )
+"""
 
 @site.route( '/contact.html' )
 def contact():
