@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for, redirect
 import os
 #from flask_frozen import Freezer
 #import sys
@@ -35,14 +35,24 @@ def video():
 def photos(GAL_NAME = None):
 
     if not GAL_NAME:
-        gs = {}
-        for gallery in GALLERIES:
-            gs[ gallery ] = GALLERY_LOCATION + '/' + GALLERIES[gallery] + '/thumbs/1.jpg'
-        return render_template( "photos.html", galleries = gs)
+        post = '/thumbs/1.jpg'
+        return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION + '/', post = post )
+
     else:
-        return render_template( "main.html" )
-    
-"""
+        GAL_NAME = GAL_NAME[: GAL_NAME.find('.') ]
+        if GAL_NAME not in GALLERIES.values():
+            return redirect( url_for('photos') )
+
+        location = GALLERY_LOCATION + '/' + GAL_NAME + '/full/'
+        pics = os.listdir( location )
+        i = 0
+        while i < len(pics):
+            pics[i] = '/' + location + pics[i]
+            i+= 1
+        print pics
+        return render_template( 'gallery.html', pics = pics )
+
+""""    
 def photos():
     location = [GALLERY_LOCATION]
     all_pics = []
