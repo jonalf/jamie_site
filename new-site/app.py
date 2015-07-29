@@ -30,16 +30,18 @@ def audio():
 def video():
     return render_template( 'main.html' )
 
-@site.route( '/photos/<GAL_NAME>' )
+@site.route( '/photos/<GAL_NAME>.html' )
 @site.route( '/photos.html' )
 def photos(GAL_NAME = None):
 
+    print GAL_NAME
+    
     if not GAL_NAME:
         post = '/thumbs/1.jpg'
+        print GALLERIES
         return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION + '/', post = post )
-
+    
     else:
-        GAL_NAME = GAL_NAME[: GAL_NAME.find('.') ]
         if GAL_NAME not in GALLERIES.values():
             return redirect( url_for('photos') )
 
@@ -48,8 +50,7 @@ def photos(GAL_NAME = None):
         i = 0
         while i < len(pics):
             pics[i] = '/' + location + pics[i]
-            i+= 1
-        print pics
+            i+= 1            
         return render_template( 'gallery.html', pics = pics )
 
 """"    
