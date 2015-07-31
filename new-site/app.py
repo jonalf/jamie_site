@@ -8,7 +8,7 @@ site = Flask( __name__ )
 #freezer = Freezer( site )
 
 GALLERY_LOCATION = 'static/img/galleries'
-GALLERIES = { 'Cabaret':'cabaret', 'Carousel':'carousel', 'The Marvelous Wonderettes':'marvelous' }
+GALLERIES = { 'Cabaret':'cabaret', 'Carousel':'carousel', 'The Marvelous Wonderettes':'marvelous', 'A Funny Thing Happened on the Way to the Forum':'forum', 'Disney Dreams':'disney', 'Eleemosynary':'eleemosynary' }
 
 @site.route( '/' )
 def root():

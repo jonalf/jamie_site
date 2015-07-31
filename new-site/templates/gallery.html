@@ -29,7 +29,7 @@
       var src = $(this).attr('src');
       src = src.replace('square', 'full');
 
-      var img = '<img src="' + src + '" class="img-responsive"/>';
+      var img = '<img style="display:block; margin:auto;" src="' + src + '" class="img-responsive"/>';
       $('#myModal').modal();
       $('#myModal').on('shown.bs.modal', function(){
 	$('#myModal .modal-body').html(img);
