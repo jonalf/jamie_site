@@ -5,9 +5,8 @@
 <div class="row">
   {% for gallery in galleries %}
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-    <!-- <a href="photos/{{ galleries[gallery] }}.html"> -->
     <a href="{{ url_for('photos', GAL_NAME=galleries[gallery]) }}">
-      <img style="display:block; margin:auto;" src="{{ pre }}{{ galleries[gallery] }}{{ post }}">
+      <img class="img-responsive gallery" src="{{ pre }}{{ galleries[gallery] }}{{ post }}">
       <center><h4>{{ gallery }}</h4></center>
     </a>
   </div>

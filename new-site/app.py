@@ -34,22 +34,20 @@ def video():
 @site.route( '/photos.html' )
 def photos(GAL_NAME = None):
 
-    print GAL_NAME
-    
     if not GAL_NAME:
-        post = '/thumbs/1.jpg'
-        print GALLERIES
+        post = '/square/1.jpg'
         return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION + '/', post = post )
     
     else:
         if GAL_NAME not in GALLERIES.values():
             return redirect( url_for('photos') )
 
-        location = GALLERY_LOCATION + '/' + GAL_NAME + '/full/'
-        pics = os.listdir( location )
+        local = GALLERY_LOCATION + '/' + GAL_NAME + '/square/'
+        location = 'img/galleries/' + GAL_NAME + '/square/'
+        pics = os.listdir( local )
         i = 0
         while i < len(pics):
-            pics[i] = '/' + location + pics[i]
+            pics[i] = location + pics[i]
             i+= 1            
         return render_template( 'gallery.html', pics = pics )
 
