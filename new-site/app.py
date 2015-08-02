@@ -8,7 +8,7 @@ site = Flask( __name__ )
 #freezer = Freezer( site )
 
 GALLERY_LOCATION = 'static/img/galleries'
-GALLERIES = { 'Cabaret':'cabaret', 'Carousel':'carousel', 'The Marvelous Wonderettes':'marvelous', 'A Funny Thing Happened on the Way to the Forum':'forum', 'Disney Dreams':'disney', 'Eleemosynary':'eleemosynary' }
+GALLERIES = [ ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
 
 @site.route( '/' )
 def root():
@@ -39,7 +39,8 @@ def photos(GAL_NAME = None):
         return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION + '/', post = post )
     
     else:
-        if GAL_NAME not in GALLERIES.values():
+        if not any( GAL_NAME in item for item in GALLERIES ):
+        #if GAL_NAME not in GALLERIES.values():
             return redirect( url_for('photos') )
 
         local = GALLERY_LOCATION + '/' + GAL_NAME + '/square/'
