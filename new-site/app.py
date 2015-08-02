@@ -1,11 +1,7 @@
 from flask import Flask, request, render_template, url_for, redirect
 import os
-#from flask_frozen import Freezer
-#import sys
 
 site = Flask( __name__ )
-
-#freezer = Freezer( site )
 
 GALLERY_LOCATION = 'static/img/galleries'
 GALLERIES = [ ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
@@ -40,7 +36,6 @@ def photos(GAL_NAME = None):
     
     else:
         if not any( GAL_NAME in item for item in GALLERIES ):
-        #if GAL_NAME not in GALLERIES.values():
             return redirect( url_for('photos') )
 
         local = GALLERY_LOCATION + '/' + GAL_NAME + '/square/'
@@ -52,35 +47,11 @@ def photos(GAL_NAME = None):
             i+= 1            
         return render_template( 'gallery.html', pics = pics )
 
-""""    
-def photos():
-    location = [GALLERY_LOCATION]
-    all_pics = []
-    galleries = os.listdir( location[0] + '/' )
-    for g in galleries: 
-        location.append(g)
-        gallery = os.listdir( '/'.join(location) )
-        pics = []
-        for p in gallery:
-            location.append( p )
-            #print '/'.join( location )
-            pics.append( '/'.join( location ) )
-            location.pop()
-        all_pics.append( pics )
-        location.pop()
-    #print all_pics
-    return render_template( 'photos.html', all_pics = all_pics )
-"""
-
 @site.route( '/contact.html' )
 def contact():
     return render_template( 'main.html' )
 
 if __name__ == '__main__':
-    #if len(sys.argv) > 1 and sys.argv[1] == "build":
-    #    FREEZER_RELATIVE_URLS = True
-    #    freezer.freeze()
-    #else:
     site.debug = True
     site.run()
     
