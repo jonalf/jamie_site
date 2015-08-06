@@ -20,11 +20,11 @@ def resume():
 
 @site.route( '/audio.html' )
 def audio():
-    return render_template( 'main.html' )
+    return render_template( 'audio.html' )
 
 @site.route( '/video.html' )
 def video():
-    return render_template( 'main.html' )
+    return render_template( 'video.html' )
 
 @site.route( '/photos/<GAL_NAME>.html' )
 @site.route( '/photos.html' )
@@ -49,7 +49,7 @@ def photos(GAL_NAME = None):
 
 @site.route( '/contact.html' )
 def contact():
-    return render_template( 'main.html' )
+    return render_template( 'contact.html' )
 
 if __name__ == '__main__':
     site.debug = True

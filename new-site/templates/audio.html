@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="media-container col-xs-12 col-md-6 col-lg-6">
+  <h4>"He's a Tramp" vocal demo</h4>
+    <audio controls ="controls">
+      <source src="{{ url_for('static', filename='audio/Tramp.mp3') }}" type="audio/mpeg" />
+      <source src="{{ url_for('static', filename='audio/Tramp.ogg') }}" type="audio/ogg" />
+       Your current browser does not support HTML5 audio. Please use Safari 5 (or later), Chrome 6 (or later), Firefox 7 (or later) or Internet Explorer 9 (or later).
+    </audio>
+</div>
+
+<div class="media-container col-xs-12 col-md-6 col-lg-6">
+  <h4>"Rainbow Connection" vocal demo</h4>
+    <audio controls ="controls">
+      <source src="{{ url_for('static', filename='audio/RainbowConnection.mp3') }}" type="audio/mpeg" />
+      <source src="{{ url_for('static', filename='audio/RainbowConnection.ogg') }}" type="audio/ogg" />
+       Your current browser does not support HTML5 audio. Please use Safari 5 (or later), Chrome 6 (or later), Firefox 7 (or later) or Internet Explorer 9 (or later).
+    </audio>
+</div>
+
+{% endblock %}
