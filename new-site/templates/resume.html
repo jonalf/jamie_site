@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
+{% block header %}
+{% endblock %}
+
 {% block content %}
-<h3 class="text-left"><a href="{{ url_for('static', filename='img/JamieThiessen.pdf') }}" target="blank" class="boxed">Click to download Jamie's headshot</a></h3>
-<h3 class="text-right"><a href="{{ url_for('static', filename='img/JamieThiessen.pdf') }}" target="blank" class="boxed">Click to download Jamie's resume</a></h3>
+<h4 class="text-left"><a href="{{ url_for('static', filename='img/JamieThiessen.pdf') }}" target="blank" class="lined">Click to download Jamie's headshot</a></h3>
+<h4 class="text-right"><a href="{{ url_for('static', filename='img/JamieThiessen.pdf') }}" target="blank" class="lined">Click to download Jamie's resume</a></h3>
   <br>
-<img class="img-responsive" src="{{ url_for('static', filename='img/JamieThiessen.png') }}">
+<img class="img-responsive" src="{{ url_for('static', filename='img/JamieThiessen-2.png') }}">
 {% endblock %}
 
 

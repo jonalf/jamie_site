@@ -43,6 +43,10 @@ body {
     border: 2px solid;
 }
 
+.lined {
+    border-bottom: 2px solid;
+}
+
 .page-header {
     margin-top: 10px;
     margin-bottom: 10px;

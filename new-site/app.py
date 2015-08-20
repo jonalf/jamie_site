@@ -1,14 +1,18 @@
 from flask import Flask, request, render_template, url_for, redirect
 import os
+import random
 
 site = Flask( __name__ )
 
 GALLERY_LOCATION = 'static/img/galleries'
-GALLERIES = [ ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
+GALLERIES = [ ('Headshots', 'headshots'), ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
 
 @site.route( '/' )
 def root():
-    return render_template( 'main.html' )
+    gals = GALLERIES[1:]
+    pic1 = gals.pop( random.randint(0, len(gals)-1 ) )[1]
+    pic2 = gals.pop( random.randint(0, len(gals)-1 ) )[1]
+    return render_template( 'main.html',  pic1=pic1, pic2=pic2 )
 
 @site.route( '/bio.html' )
 def bio():
@@ -46,10 +50,6 @@ def photos(GAL_NAME = None):
             pics[i] = location + pics[i]
             i+= 1            
         return render_template( 'gallery.html', pics = pics )
-
-@site.route( '/contact.html' )
-def contact():
-    return render_template( 'contact.html' )
 
 if __name__ == '__main__':
     site.debug = True
