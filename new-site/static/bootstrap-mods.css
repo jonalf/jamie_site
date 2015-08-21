@@ -90,6 +90,10 @@ body {
     margin-bottom: 0px;
 }
 
+.navbar-right {
+    padding-right: 10px;
+}
+
 .navbar-default .navbar-brand {
     color: #98C1D9;
 }
