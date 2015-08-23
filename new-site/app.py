@@ -1,10 +1,15 @@
 from flask import Flask, request, render_template, url_for, redirect
 import os
 import random
+from socket import gethostname
 
 site = Flask( __name__ )
 
-GALLERY_LOCATION = 'static/img/galleries'
+GALLERY_LOCATION_WEB = 'static/img/galleries'
+GALLERY_LOCATION_LOCAL = GALLERY_LOCATION_WEB
+if gethostname() == 'fry':
+    GALLERY_LOCATION_LOCAL = '/var/www/html/test/test/static/img/galleries'
+
 GALLERIES = [ ('Headshots', 'headshots'), ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
 
 @site.route( '/' )
@@ -36,13 +41,13 @@ def photos(GAL_NAME = None):
 
     if not GAL_NAME:
         post = '/square/1.jpg'
-        return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION + '/', post = post )
+        return render_template( "photos.html", galleries = GALLERIES, pre = GALLERY_LOCATION_WEB + '/', post = post )
     
     else:
         if not any( GAL_NAME in item for item in GALLERIES ):
             return redirect( url_for('photos') )
 
-        local = GALLERY_LOCATION + '/' + GAL_NAME + '/square/'
+        local = GALLERY_LOCATION_LOCAL + '/' + GAL_NAME + '/square/'
         location = 'img/galleries/' + GAL_NAME + '/square/'
         pics = os.listdir( local )
         i = 0
