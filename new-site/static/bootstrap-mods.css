@@ -95,11 +95,11 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: #98C1D9;
+    color: #C3DCFF;
 }
 
 .navbar-default .navbar-brand:hover {
-    color: #98C1D9;
+    color: #C3DCFF;
 }
 
 /*
@@ -122,7 +122,7 @@ toggle is used for sall screens
 
 /*navbar link stuff*/
 .navbar-brand>a {
-    color: #98C1D9;
+    color: #C3DCFF;
 }
 
 .navbar-brand>a:hover {
@@ -131,12 +131,12 @@ toggle is used for sall screens
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #98C1D9;
+    color: #C3DCFF;
     font-size: 1.25em;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #FAF3DD;
+    color: #FFD4D1;
 }
 
 /*toggle icon*/
@@ -156,7 +156,7 @@ toggle is used for sall screens
 }
 
 .dropdown-menu>li>a {
-    color: #98C1D9;
+    color: #C3DCFF;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
@@ -165,7 +165,7 @@ toggle is used for sall screens
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-    color: #98C1D9;
+    color: #C3DCFF;
     font-size: 1.1em;
 }
 /*==========================
