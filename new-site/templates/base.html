@@ -9,6 +9,11 @@
   <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
   <link href="{{ url_for( 'static', filename='bootstrap-mods.css') }}" rel="stylesheet" />
   <title>Jamie Thiessen</title>
+
+  {% block headscript %}
+  <script></script>
+  {% endblock %}
+
 </head>
 
 <body>
@@ -25,8 +30,6 @@
 	  </button><!--End toggle button-->
 	  <a class="navbar-brand visible-xs-inline" href="mailto:jamierthiessen@gmail.com">jamieRthiessen@gmail.com</a>
 	</div>
-
-
 	
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
