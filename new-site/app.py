@@ -46,7 +46,7 @@ def photos(GAL_NAME = None):
     else:
         if not any( GAL_NAME in item for item in GALLERIES ):
             return redirect( url_for('photos') )
-
+        
         local = GALLERY_LOCATION_LOCAL + '/' + GAL_NAME + '/square/'
         location = 'img/galleries/' + GAL_NAME + '/square/'
         pics = os.listdir( local )
@@ -54,7 +54,19 @@ def photos(GAL_NAME = None):
         while i < len(pics):
             pics[i] = location + pics[i]
             i+= 1            
-        return render_template( 'gallery.html', pics = pics )
+
+        i = 0
+        while i < len( GALLERIES ) and GALLERIES[i][1] != GAL_NAME:
+            i+= 1
+
+        if i == len(GALLERIES) - 1:
+            next_link = 'headshots'
+            next_gallery = 'Headshots'
+        else:
+            next_link = GALLERIES[i+1][1]
+            next_gallery = GALLERIES[i+1][0]
+
+        return render_template( 'gallery.html', pics = pics, next_link = next_link, next_gallery = next_gallery )
 
 if __name__ == '__main__':
     site.debug = True

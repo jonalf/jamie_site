@@ -12,6 +12,10 @@
   {% endfor %}
 </div>
 
+<center>
+  <h3>Next Gallery: <a href="{{ url_for('photos', GAL_NAME=next_link) }}">{{ next_gallery  }}</a></h3>
+</center>
+
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
