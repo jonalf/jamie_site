@@ -8,7 +8,7 @@ site = Flask( __name__ )
 GALLERY_LOCATION_WEB = 'static/img/galleries'
 GALLERY_LOCATION_LOCAL = GALLERY_LOCATION_WEB
 if gethostname() == 'fry':
-    GALLERY_LOCATION_LOCAL = '/var/www/html/test/test/static/img/galleries'
+    GALLERY_LOCATION_LOCAL = '/var/www/html/jamie/jamie/static/img/galleries'
 
 GALLERIES = [ ('Headshots', 'headshots'), ('Cabaret','cabaret'), ('The Marvelous Wonderettes','marvelous'), ('Carousel','carousel'), ('A Funny Thing Happened on the Way to the Forum','forum'), ('Disney Dreams','disney'), ('Eleemosynary','eleemosynary') ]
 
